@@ -7,6 +7,7 @@ Welcome to my blog! My name is Gabriel Russell. I am currently a 4th year electr
 Hello and welcome to this blog. Edit the `index.md` file to change this content. All pages on the blog, including this one, use [Markdown](https://guides.github.com/features/mastering-markdown/). You can include images:
 
 ![Image of fast.ai logo](images/logo.png)
+![Profile Photo](images/profile.png)
 
 ## This is a title
 
