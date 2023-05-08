@@ -1,0 +1,38 @@
+# Classifying between a bird and forest image
+
+In this first lesson of the fastai course, a binary classification is formed to distinguish between photos of a bird and a forest. Reading through this way of coding a solution to distinguish images such as these came at a shock for me as I was astounded at how simple lines of code could result in such complex operations. 
+Summarising the basic steps that were taken to perform this:
+1. Bird photos were searched using DuckDuckGo
+2. Forest photos were searched using DuckDuckGo
+3. Fine-tuning a pretrained neural network to recognise these two groups
+4. Running a model on a test picture to see if it identifies a bird correctly
+
+## Coding simplicity
+
+One of the interesting things I learnt was about the simplicity of using the DuckDuckGo search engine  to quickly find a large set of images with minimal code required. 
+Below is a snippet of code provided in this lesson to show the simplicity of downloading an image of a single bird.
+
+  from duckduckgo_search import ddg_images
+  from fastcore.all import *
+
+  def search_images(term, max_images=200): return L(ddg_images(term, max_results=max_images)).itemgot('image')
+  urls = search_images('bird photos', max_images=1)
+  from fastdownload import download_url
+  dest = 'bird.jpg'
+  download_url(urls[0], dest, show_progress=False)
+
+  from fastai.vision.all import *
+  im = Image.open(dest)
+  im.to_thumb(256,256)
+![bird photo](images/bird_photo.jpg)
+
+## Training a model on a batch
+
+Another thing I learnt was the ability for a model to train batches for decreasing computation speed using the GPU. This is where separating a training set into minibatches such that the GPU can run multiple of these minibatches in parallel to train the entirety of the data set quicker than one by one. 
+The way that the model is trained is by using a **training set** and a **validation set**. This is split such that from the total number of images, the majority of photos are used to train the model while the remaining portion of the images are used to validate the accuracy of this newly trained model.
+In fastai, a really simple and easy to use object called a `**DataLoader**` is used, which contains a *training* and *validation* set of images. 
+
+## Training the model
+
+I was honestly surprised by the accuracies delivered by the premade model `**resnet18**` that was used. After some fine tuning, the training loss and validation loss only reported **0.0322** and **0.007967** respectively after 2 epochs. 
+Overall, I think the use of fastai certainly simplifies complex processes that seemed near impossible in previous years. I think this will certainly be an interesting field to continue to follow as it continues to develop. 
