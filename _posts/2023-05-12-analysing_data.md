@@ -19,7 +19,7 @@ This takes the form of a simple scatter plot such as the one below. The followin
 ## Confusion Matrices
 A confusion matrix is a visual representation that determines the accuracy of actual vs predicted values from the output of a model.
 A confusion matrix will contain a row/column for each classification used, that will indicate the percentage or number of true positives/negatives and false positives/negatives present.
-If a model is extremely accurate, the ideal scenario will present a diagonal from top left to bottom right of the confusion matrix where these percentages are close to or exactly 100%.
+If a model is extremely accurate, the ideal scenario will present a diagonal from top left to bottom right of the confusion matrix where these percentages are close to or exactly 100% or equal to the number of inputs tested.
 The following image is a simple example of a confusion matrix. 
 ![](/images/confusion_matrix.jpg)
 
