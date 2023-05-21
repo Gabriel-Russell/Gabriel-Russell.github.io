@@ -6,6 +6,3 @@ Welcome to my blog! My name is Gabriel Russell. I am currently a 4th year electr
 ![Image of fast.ai logo](images/logo.png)
 ![Profile Photo](images/profile.png)
 
-## Posts
-
-And you can include links, like this [link to fast.ai](https://www.fast.ai). Posts will appear after this file. 
